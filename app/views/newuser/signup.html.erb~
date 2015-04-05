@@ -1,0 +1,16 @@
+
+ <form action="/accountcreated">
+username:<br>
+<input type="text" name="username" value="Mickey">
+<br>
+email:<br>
+<input type="text" name="email" value="Mouse">
+<br>password:<br>
+<input type="password" name="password" value="pwd">
+<br>
+password_confirmation:<br>
+<input type="password" name="email" value="pc">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+
