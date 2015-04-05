@@ -1,0 +1,14 @@
+Given(/^I'm on the new article page$/) do
+  visit(new_article_path)
+end
+
+When(/^I add a new article$/) do
+  fill_in 'Title', :with => "Charles Dickens"
+  fill_in 'Text', :with => "Some article text"
+  click_button 'Save Article'
+end
+
+Then(/^I should be able to see the article created page$/) do
+  assert page.has_content?("Article Created Successfly")
+end
+

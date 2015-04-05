@@ -1,4 +1,14 @@
 Musicgrocery::Application.routes.draw do
+  post "search/details"
+
+  post "biography/info"
+
+  post "boigraphy/info"
+
+  post "event/info"
+
+  post "album/info"
+
   get "newuser/signup"
 
   resources :users

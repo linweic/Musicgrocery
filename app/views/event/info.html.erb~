@@ -1,0 +1,17 @@
+<h1>Event Details</h1>
+<p>
+	<% if @event_array.nil?%>
+	  <%="NO TOP EVENT FOUND FOR #{@name}"%>
+	<% else %>	
+	<ol>
+		<% for @event in @event_array -%>
+			<ul>
+				<li>Title: <%=@event["title"]%></li>
+				<li>Event URL:<%=@event["venue"]["url"]%></li>
+			</ul>
+			<br>
+		<% end -%>
+	</ol>
+	<%end%>
+</p>
+

@@ -1,0 +1,33 @@
+<h1>DETAILS FOR:<%=@artist_name %></h1>
+
+
+
+<%= form_for :albuma, url:"/album/info" do |f| %>
+  <p>
+    <%=@artist_name%>
+    <%= f.hidden_field :album, :value => @artist_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :id => "top_albums", :value => "Top Albums", :name =>"1" %>
+  </p>
+<% end %>
+
+<%= form_for :biographyb, url:"/biography/info" do |f| %>
+  <p>
+    <%= f.hidden_field :biography, :value => @artist_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :id => "biography", :value => "View Biography", :name =>"2" %>
+  </p>
+<% end %>
+<%= form_for :evente, url:"/event/info" do |f| %>
+  <p>
+    <%= f.hidden_field :event, :value => @artist_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit :id => "events", :value => "View Event", :name =>"3" %>
+  </p>
+<% end %>

@@ -1,0 +1,2 @@
+module BoigraphyHelper
+end
