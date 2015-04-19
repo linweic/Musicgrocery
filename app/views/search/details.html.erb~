@@ -1,10 +1,7 @@
 <h1>DETAILS FOR:<%=@artist_name %></h1>
 
-
-
 <%= form_for :albuma, url:"/album/info" do |f| %>
   <p>
-    <%=@artist_name%>
     <%= f.hidden_field :album, :value => @artist_name %>
   </p>
  

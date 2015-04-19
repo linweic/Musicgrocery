@@ -1,7 +1,5 @@
 <h1>DETAILS FOR:<%=@artist_name %></h1>
 
-
-
 <%= form_for :albuma, url:"/album/info" do |f| %>
   <p>
     <%= f.hidden_field :album, :value => @artist_name %>
@@ -30,3 +28,8 @@
     <%= f.submit :id => "events", :value => "View Event", :name =>"3" %>
   </p>
 <% end %>
+
+<div class="form-actions">
+ <%= link_to 'Add to Favourites!', "/favorates#new", :class => 'btn' %>
+ </div>
+

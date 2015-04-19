@@ -6,7 +6,17 @@ class AlbumController < ApplicationController
 	url_string=URI.encode(url_string)
 	response=HTTParty.get(url_string)
 	@album_array = response["lfm"]["topalbums"]["album"]
-	#@album_name=response["lfm"]["topalbums"]["album"][0]["name"]
+	@album_length = @album_array.length
+	@playlist = {}
+	#@youtube_api_key = "AIzaSyDE0Wni7V0irRIBjczx6pKl-DkSlHhmM_A"
+	(0..@album_length-1).each do |i|
+		@album_name=response["lfm"]["topalbums"]["album"][i]["name"]
+		youtube_string="https://www.googleapis.com/youtube/v3/search?q=#{@album_name} #{@name}&part=snippet&key=AIzaSyDE0Wni7V0irRIBjczx6pKl-DkSlHhmM_A&type=playlist"
+		youtube_string=URI.encode(youtube_string)
+    youtube_response=HTTParty.get(youtube_string)
+    @playlistId=youtube_response["items"][0]["id"]["playlistId"]
+		@playlist[@album_name]="https://www.youtube.com/playlist?list=#{@playlistId}"
+	end
   end
 end
 

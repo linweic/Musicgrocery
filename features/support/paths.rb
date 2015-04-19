@@ -9,7 +9,7 @@ module NavigationHelpers
     #     user_profile_path(User.find_by_login($1))
 
     when /^the home page$/ 
-      '/users/new'
+      '/music_grocery/index'
     when /^the artist details page$/
       '/search/details'
     else

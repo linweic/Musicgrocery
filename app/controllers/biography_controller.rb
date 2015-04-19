@@ -1,4 +1,7 @@
 class BiographyController < ApplicationController
+
+  skip_before_filter:authenticate_customer!
+  
   def info
 	hash=params[:biographyb]
 	@name=hash[:biography]

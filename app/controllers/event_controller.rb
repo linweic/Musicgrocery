@@ -1,4 +1,6 @@
 class EventController < ApplicationController
+  skip_before_filter:authenticate_customer!
+  
   def info
 	hash=params[:evente]
 	@name=hash[:event]

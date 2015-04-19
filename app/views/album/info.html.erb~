@@ -1,0 +1,13 @@
+<h1>Top Albums</h1>
+<p>
+
+	<% if @album_array.nil?%>
+	  <%="NO TOP ALBUMS FOUND FOR #{@name}"%>
+	<% else %>
+	<ol>
+		<% for @album in @album_array -%>
+			<li>Album: <%=link_to @album["name"], "https://www.youtube.com"%></li>
+		<% end -%>
+	</ol>
+	<% end %>
+</p>

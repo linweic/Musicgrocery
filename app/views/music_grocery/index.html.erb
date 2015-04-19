@@ -1,0 +1,14 @@
+<h1>MusicGrocery</h1>
+
+<%= form_for :search, url: "/search/details" do |f| %>
+<p>
+    <%= f.label "Artist Name" %><br>
+    <%= f.text_field :name %>
+</p>
+<p>
+    <%= f.submit "Search!" %>
+ </p>
+<% end %>
+
+
+

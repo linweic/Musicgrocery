@@ -1,5 +1,33 @@
 Musicgrocery::Application.routes.draw do
-  post "search/details"
+  
+
+  get "customer/dashboard"
+  
+  resources :favorates
+   #root :to => "favorates#index"	
+  get "favorates#show", :to => "search#details" 	
+  get "music_grocery/index"
+
+  devise_for :customers
+
+  devise_scope :customer do
+  get "customer/dashboard" => "devise/sessions#new"
+  post "/search/details"
+  #get "/dashboard/dashboard" => ""
+  end
+
+
+#devise_scope :user do
+#  match 'registrations/create' => 'registrations#create', :as => :user_register
+#end
+
+	#devise_scope :customer do
+  	#get "/", :to => "devise/sessions#new"
+	#end
+
+
+
+  
 
   post "biography/info"
 
@@ -11,12 +39,15 @@ Musicgrocery::Application.routes.draw do
 
   get "newuser/signup"
 
+  root :to => "music_grocery#index"  
+
   resources :users
-  root :to => "users#index"
+  #root :to => "users#index"
   get "/newuser/signup"
   get "/newuser/accountcreated"
   get "/dashboard/dashboard"
-  # The priority is based upon order of creation:
+  
+# The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

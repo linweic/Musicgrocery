@@ -1,0 +1,3 @@
+class Favorate < ActiveRecord::Base
+  attr_accessible :artist, :email
+end

@@ -1,5 +1,7 @@
 Given(/^I'm on the artist details page$/) do
-  page.driver.post('/search/details', { :search => { :name => "Linkin Park" } } ) 
+  visit('/music_grocery/index')
+  fill_in 'search_name', :with => "Cher"
+  click_button 'Search!' 
 end
 
 When(/^I click on View Biography$/) do
@@ -7,8 +9,23 @@ When(/^I click on View Biography$/) do
 end
 
 Then(/^I should be able to see the artist biography$/) do
-  puts page.body
   assert page.has_content?("Biography")
+end
+
+When(/^I click on View Album$/) do
+  click_button "Top Albums"
+end
+
+Then(/^I should be able to see the artist top albums$/) do
+  assert page.has_content?("Top Albums")
+end
+
+When(/^I press View Event$/) do
+  click_button "View Event"
+end
+
+Then(/^I should be able to see the artist past events$/) do
+  assert page.has_content?("Event Details")
 end
 
 
