@@ -6,7 +6,7 @@
 	<% else %>
 	<ol>
 		<% for @album in @album_array -%>
-			<li>Album: <%=link_to @album["name"], @playlistId[@album_name]%></li>
+			<li>Album: <%=link_to @album["name"], @playlist[@album["name"]]%></li>
 		<% end -%>
 	</ol>
 	<% end %>
