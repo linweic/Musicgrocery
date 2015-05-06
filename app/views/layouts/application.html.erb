@@ -5,13 +5,26 @@
 <html>
 <head>
   <title>MusicGrocery</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <p align = "center"><%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %> </p>
 </head>
+
+<style>                                                                                                                                                                  
+body {                                                                                                                                                       
+
+background: url("http://telusers.com/colorful-music-notes-wallpaper-7655-hd-wallpapers.html") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+</style>
 <body>
 
-<p class="navbar-text pull-right">
+<p align = "center" class="navbar-text pull-right">
+
 <% if customer_signed_in? %>
   Logged in as <strong><%= current_customer.email %></strong>.
   <%= link_to 'Edit profile', edit_customer_registration_path, :class => 'navbar-link' %> |
