@@ -37,6 +37,12 @@ Musicgrocery::Application.routes.draw do
 
   post "album/info"
 
+  post "song/info"
+
+  post "lyric/info"
+
+  get "song/info"
+
   get "newuser/signup"
 
   root :to => "music_grocery#index"  

@@ -1,0 +1,22 @@
+<h1>Songs for <%=@album_name %></h1>
+
+<p>
+  <% if @track_array.nil? %>
+      <%="NO TOP SONGS FOUND FOR #{@album_name}"%>
+  <% else %>
+    <ol>
+      <% (0..@track_length-1).each do |i| -%>
+          <li>
+            <%= form_for :songinfo, url: "/lyric/info" do |f| %>
+            Song: <%= link_to @track_array[i]["name"], @playlist[@track_array[i]["name"]] %>
+            <%= hidden_field_tag :length, @track_length %>
+            <%= hidden_field_tag "track#{i}", @track_array[i]["name"] %>
+            <%= hidden_field_tag "lyrics#{i}", @lyricslist[@track_array[i]["name"]] %>
+            <%= f.submit :lyrics  %>
+            <% end %>
+
+          </li>
+      <% end -%>
+    </ol>
+<% end %>
+</p>

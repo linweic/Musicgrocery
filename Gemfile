@@ -34,6 +34,8 @@ gem 'jquery-rails'
 
 gem 'httparty'
 
+gem 'musix_match'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
