@@ -1,11 +1,18 @@
 class FavoratesController < ApplicationController
   before_filter :set_favorate, only: [:show, :edit, :update, :destroy]
-
+   	
   respond_to :html
 
   def index
-    @favorates = Favorate.all
-    respond_with(@favorates)
+
+       if current_customer
+	     @email = current_customer.email
+	     @favorates = Favorate.all(:conditions => ["email = :email", { :email => @email}])
+       else
+          redirect_to new_customer_session_path, notice: 'You are not logged in.'
+       end
+	
+	respond_with(@favorates)
   end
 
   def show
@@ -13,6 +20,7 @@ class FavoratesController < ApplicationController
   end
 
   def new
+    #@favorate = current_customer.email.build	
     @favorate = Favorate.new
     respond_with(@favorate)
   end
@@ -22,8 +30,13 @@ class FavoratesController < ApplicationController
 
   def create
     @favorate = Favorate.new(params[:favorate])
-    @favorate.save
-    respond_with(@favorate)
+    if current_customer.email == @favorate.email 	
+	    @favorate.save
+	    respond_with(@favorate)
+    else
+	    redirect_to new_customer_session_path, notice: 'New User Account?'
+    end
+	
   end
 
   def update
