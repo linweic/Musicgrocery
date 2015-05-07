@@ -15,7 +15,7 @@ When(/^I enter the username and password correctly$/) do
 end
 
 Then(/^I should be able to see the user dashboard page$/) do
-  assert page.has_content?("Welcome")
+  assert page.has_content?("Welcome!")
 end
 
 When(/^I enter the password and leave the username field blank$/) do

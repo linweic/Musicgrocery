@@ -1,13 +1,27 @@
 <h1>Top Albums</h1>
-<p>
 
-	<% if @album_array.nil?%>
-	  <%="NO TOP ALBUMS FOUND FOR #{@name}"%>
-	<% else %>
-	<ol>
-		<% for @album in @album_array -%>
-			<li>Album: <%=link_to @album["name"], "https://www.youtube.com"%></li>
-		<% end -%>
-	</ol>
-	<% end %>
-</p>
+    <p>
+
+      <% if @album_array.nil?%>
+          <%="NO TOP ALBUMS FOUND FOR #{@name}"%>
+      <% else %>
+       <ol>
+         <%(0..@album_length-1).each do |i| -%>
+             <li>
+<!--               <%= label_tag(:album, @album_array[i]["name"]) %>
+               <%= radio_button_tag(:album_name,@album_array[i]["name"]) %>-->
+               <%= form_for :albuminfo, url: "/song/info" do |f| %>
+                   <%= hidden_field_tag :artist, @name %>
+                   <%= hidden_field_tag :length, @album_length %>
+                   <%= hidden_field_tag "album#{i}", @album_array[i]["name"] %>
+                   <%= f.submit :value => @album_array[i]["name"]  %>
+               <% end %>
+             </li>
+             <br>
+          <% end -%>
+       </ol>
+        <% end %>
+    </p>
+
+
+

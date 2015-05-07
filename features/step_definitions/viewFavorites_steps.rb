@@ -36,6 +36,6 @@ When(/^I press the button Add to Favorites!$/) do
 end
 
 Then(/^I should be able to see the add new favorite artist page$/) do
-  assert page.has_content?("Listing favorates")
+  assert page.has_content?("Artist")
 end
 

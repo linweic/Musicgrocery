@@ -9,7 +9,7 @@ When(/^I click on View Biography$/) do
 end
 
 Then(/^I should be able to see the artist biography$/) do
-  assert page.has_content?("Biography")
+  assert page.has_content?("Name")
 end
 
 When(/^I click on View Album$/) do
@@ -25,7 +25,7 @@ When(/^I press View Event$/) do
 end
 
 Then(/^I should be able to see the artist past events$/) do
-  assert page.has_content?("Event Details")
+  assert page.has_content?("Title")
 end
 
 

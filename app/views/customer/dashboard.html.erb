@@ -1,20 +1,20 @@
 
-<h1> Welcome! 
+<h1><a href="http://fontmeme.com/fancy-fonts/"><img src="http://fontmeme.com/embed.php?text=Welcome!&name=
+JandaHappyDay.ttf&size=50&style_color=15155E" alt="Fancy Fonts"></a>  </h1> 
 
   <%= form_for :search, url: "/search/details" do |f| %>
-  <div class="control-group">
+ 
     <%= f.label "search", :class => 'control-label' %>
-    <div class="controls">
+    
       <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
+    
   
-  <div class="form-actions">
+  
     <%= f.submit 'Search!', :class => 'btn btn-primary' %>
-      </div>
+      
 <% end %>
 
-<div class="form-actions">
- <%= link_to 'View Favourites!', "/favorates#show", :class => 'btn' %>
- </div>
+
+ <%= link_to 'View Favourites!', "/favorates#show", :class => 'btn btn-primary' %>
+ 
 

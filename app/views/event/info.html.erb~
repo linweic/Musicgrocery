@@ -7,7 +7,7 @@
 		<% for @event in @event_array -%>
 			<ul>
 				<li>Title: <%=@event["title"]%></li>
-				<li>Event URL:<%=@event["venue"]["url"]%></li>
+				<li>Event URL:<%=link_to "Click here for more information", @event["venue"]["url"]%></li>
 			</ul>
 			<br>
 		<% end -%>

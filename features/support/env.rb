@@ -3,6 +3,23 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/lib/'
+  add_filter '/vendor/'
+  add_filter '/app/controllers/users_controller.rb'
+  add_filter '/app/models/user.rb'
+  add_filter '/app/helpers/sessions_helper.rb'
+  add_filter '/app/controllers/sessions_controller.rb'
+  add_filter 'features/support/paths.rb'
+
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Models', 'app/models'
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Mailers', 'app/mailers'
+end
 
 require 'cucumber/rails'
 

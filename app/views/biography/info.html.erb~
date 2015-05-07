@@ -1,0 +1,15 @@
+<h1>Biography#info</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @artist_name%>
+</p>
+ 
+<p>
+  <%= image_tag @img_url %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @summary %>
+</p>
+

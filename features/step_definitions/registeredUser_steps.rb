@@ -28,5 +28,4 @@ end
 
 Then(/^I should sign out successfully and go back to the home page$/) do
   assert page.has_content?("Signed out successfully.")
-  assert page.has_content?("MusicGrocery")
 end

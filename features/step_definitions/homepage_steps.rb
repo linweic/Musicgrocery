@@ -23,5 +23,5 @@ When(/^I search for an artist$/) do
 end
 
 Then(/^I should be able to see the artist details page$/) do
-  assert page.has_content?("DETAILS")
+  assert page.has_link?("Add to Favourites!")
 end

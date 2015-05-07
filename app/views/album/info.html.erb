@@ -14,7 +14,7 @@
                    <%= hidden_field_tag :artist, @name %>
                    <%= hidden_field_tag :length, @album_length %>
                    <%= hidden_field_tag "album#{i}", @album_array[i]["name"] %>
-                   <%= f.submit :value => @album_array[i]["name"]  %>
+                   <%= f.submit :value => @album_array[i]["name"], :class => "btn-custom"  %>
                <% end %>
              </li>
              <br>

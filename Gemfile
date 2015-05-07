@@ -5,7 +5,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'rails', '3.2.21'
-
+gem 'simplecov'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -16,6 +16,7 @@ group :development, :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
 end
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,5 @@
-<h1>MusicGrocery</h1>
+<h1><a href="http://fontmeme.com/fancy-fonts/"><img src="http://fontmeme.com/embed.php?text=MusicGrocery&name=
+JandaHappyDay.ttf&size=50&style_color=15155E" alt="Fancy Fonts"></a></h1>
 
 <%= form_for :search, url: "/search/details" do |f| %>
 <p>
@@ -6,7 +7,7 @@
     <%= f.text_field :name %>
 </p>
 <p>
-    <%= f.submit "Search!" %>
+    <%= f.submit "Search!", :class => "btn-custom" %>
  </p>
 <% end %>
 

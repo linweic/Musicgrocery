@@ -1,4 +1,5 @@
-<h1>Listing favorates</h1>
+<h1><a href="http://fontmeme.com/fancy-fonts/"><img src="http://fontmeme.com/embed.php?text=Listing favorites &name=
+JandaHappyDay.ttf&size=50&style_color=15155E" alt="Fancy Fonts"></a></h1>
 
 <table>
   <tr>
@@ -11,7 +12,7 @@
 
 <% @favorates.each do |favorate| %>
   <tr>
-    <td><%= favorate.class.where(email: "pandeyshreya@rediffmail.com").select(:email).take %></td>
+    <td><%= favorate.email %></td>
     <td><%= favorate.artist %></td>
     <%= form_for :search, url:"/search/details" do |f| %>
     <%= f.hidden_field :name, :value => favorate.artist %>
